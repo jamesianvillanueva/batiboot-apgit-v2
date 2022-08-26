@@ -1,0 +1,108 @@
+// Center Dialog (Modal)
+.dialog-center {
+    /* justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center; */
+
+    .dialog-title{
+        justify-content: flex-start;
+        justify-items: flex-start;
+        align-items: flex-start;
+        text-align: left;
+        height: 70px;
+    }
+
+    // HIP-Logo Size Controller
+    .fullmodal-logo {
+        margin-top: -30px;
+        margin-bottom: -30px;
+        margin-left: -20px;
+        margin-right: -10px;
+
+        img {
+            width: 120px;
+        }
+    }
+}
+
+.divider{
+    margin-top: -12px;
+}
+
+.text-main{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.text-black{
+    color: black;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.ezample{
+    overflow-y: scroll;
+    max-height: calc(85vh - 20px);
+    min-height: calc(85vh - 20px);
+    margin-top: -10px;
+}
+
+// Modal Body
+.mpp-main{
+
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+
+    .mpp-header{
+        position: fixed;
+        top: -5px;
+        left: 0;
+        width: 100%;
+        /* padding: 20px; */
+        z-index: 9999;
+        margin-bottom: 24px;
+        background: #f2f5ff;
+    }
+
+    .mpp-body{
+       
+        margin-top: 4.5rem;
+        margin-bottom: 5rem;
+        height: 80%;
+        min-height: 80%;
+        max-height: 80%; 
+        overflow-y: scroll;
+/*         margin-top: 70px;
+        margin-bottom: 60px;
+        margin-left: -10px;
+        margin-right: -10px; */
+
+        /* margin-top: 50px; */
+    }
+
+    .mpp-footer{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        /* background: #f2f5ff; */
+        width: 100%;
+        background: #f2f5ff;
+        /* padding-bottom: 10px;
+        padding: 0px 10px 10px 0px; */
+    }
+}
+
+// -----------------------------------------------------------------------------
+
+// CardMenuSummary.js
+.cms-icon {
+    svg {
+        margin-left: -5px;
+    }
+}
+
+.cms-divider{
+    margin-top: -15px;
+}

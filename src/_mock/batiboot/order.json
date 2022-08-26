@@ -1,0 +1,51 @@
+[
+    {
+        "id": 1,
+        "orderNumber" : "ORD-NO: 1294",
+        "pName" : "Nike Zoom",
+        "pDescription": "Shoes",
+        "orderCreated" : "06-02-2022",
+        "dueDate" : "06-08-2022",
+        "quantity" : "40",
+        "amount" : 1130.00,
+        "orderStatus" : "paid",
+        "inquireQuoStatus" : "approved"
+    },
+    {
+        "id": 2,
+        "orderNumber" : "ORD-NO: 1256",
+        "pName" : "Asus ROG",
+        "pDescription": "Gaming Laptop",
+        "orderCreated" : "12-02-2021",
+        "dueDate" : "12-04-2021",
+        "quantity" : "40",
+        "amount" : 2340.00,
+        "orderStatus" : "overdue",
+        "inquireQuoStatus" : "approved"
+    },
+    {
+        "id": 3,
+        "orderNumber" : "ORD-NO: 1274",
+        "pName" : "Notebook",
+        "pDescription": "Notebook",
+        "orderCreated" : "06-08-2022",
+        "dueDate" : "06-12-2022",
+        "quantity" : "40",
+        "amount" : 5.00,
+        "orderStatus" : "overdue",
+        "inquireQuoStatus" : "approved"
+    },
+    {
+        "id": 4,
+        "orderNumber" : "ORD-NO: 1344",
+        "pName" : "Parker",
+        "pDescription": "Pen",
+        "orderCreated" : "06-13-2022",
+        "dueDate" : "06-16-2022",
+        "quantity" : "20",
+        "amount" : 140.00,
+        "orderStatus" : "draft",
+        "inquireQuoStatus" : "draft"
+    }
+]
+

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "status": "active",
+        "role": "administrator"
+    },
+    {
+        "id": 2,
+        "status": "active",
+        "role": "sourcing agent"
+    },
+    {
+        "id": 3,
+        "status": "active",
+        "role": "manager"
+    },
+    {
+        "id": 4,
+        "status": "active",
+        "role": "supervisor"
+    },
+    {
+        "id": 5,
+        "status": "active",
+        "role": "manager"
+    },
+    {
+        "id": 6,
+        "status": "active",
+        "role": "administrator"
+    },
+    {
+        "id": 7,
+        "status": "active",
+        "role": "sourcing agent"
+    },
+    {
+        "id": 8,
+        "status": "active",
+        "role": "sourcing agent"
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "name": "vince de leon",
+        "status": "active",
+        "role": "sourcing agent",
+        "department": "sales",
+        "designation": "sourcing agent",
+        "phone": "+639563388849",
+        "email": "bit@yopmail.com"
+    },
+    {
+        "id": 2,
+        "name": "bryce ganotice",
+        "status": "active",
+        "role": "administrator",
+        "department": "management",
+        "designation": "administrator",
+        "phone": "+639563323212",
+        "email": "bryce@yopmail.com"
+    },
+    {
+        "id": 3,
+        "name": "sandrei santos",
+        "status": "active",
+        "role": "",
+        "department": "administration",
+        "designation": "manager",
+        "phone": "+639286923733",
+        "email": "sandrei@yopmail.com"
+    },
+    {
+        "id": 400,
+        "name": "juan dela cruz",
+        "status": "active",
+        "role": "administrator",
+        "department": "administration",
+        "designation": "supervisor",
+        "phone": "+639563323214",
+        "email": "delacruz@yopmail.com"
+    }
+]

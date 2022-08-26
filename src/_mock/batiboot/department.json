@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "status": "active",
+        "role": "sales"
+    },
+    {
+        "id": 2,
+        "status": "active",
+        "role": "marketing"
+    },
+    {
+        "id": 3,
+        "status": "active",
+        "role": "manager"
+    },
+    {
+        "id": 4,
+        "status": "active",
+        "role": "management"
+    }
+]
