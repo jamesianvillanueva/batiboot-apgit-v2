@@ -1,76 +1,49 @@
 import { m } from 'framer-motion';
 // @mui
 import { Box, Container, Typography, Grid } from '@mui/material';
+import { alpha, useTheme, styled } from '@mui/material/styles';
 // components
 import Image from '../../components/Image';
 import { MotionViewport, varFade } from '../../components/animate';
 
+const RootStyle = styled('div')(({ theme }) => ({
+  padding: theme.spacing(10, 0),
+  marginTop: 55,
+}));
+
+const ContentStyle = styled('div')(({ theme }) => ({
+  width: '100%',
+  textAlign: 'center',
+  marginBottom: theme.spacing(10),
+  [theme.breakpoints.up('md')]: {
+    textAlign: 'left',
+    marginBottom: 0,
+  },
+}));
+
 export default function ServicesGrid() {
   return (
-    <Container component={MotionViewport} sx={{ mt: 10, mb: 10 }}>
-      <Grid container spacing={2} justifyContent='center' sx={{textAlign:"center"}}>
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\label.png" alt="label" />
+    <>
+      <RootStyle sx={{ backgroundColor: '#02c4f0' }}>
+        <Container component={MotionViewport}>
+          <Grid container spacing={2}>
+            <Grid item xs={6} md={3}>
+              <Grid container spacing={2}>
+                <Grid item xs={5}>
+                  <Image src="\assets\Logo2\cargo.png" variants={varFade().inRight} />
+                </Grid>
+                <Grid item xs={7}>
+                  <m.div variants={varFade().inRight}>
+                    <Typography variant="h4" sx={{ mt: 2 }}>
+                      Product Sourcing
+                    </Typography>
+                  </m.div>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Private Labeling</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\branding.png" alt="label" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Rebranding</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\product-design.png" alt="label" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Customize Packaging</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\ship.png" alt="label" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Importing</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\Container.png" alt="label" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Warehouse</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        <Grid item md={6} xs={12} sx={{mt: 5}}>
-          <Grid item md={2} xs={3} sx={{ml: 18}}>
-            <Image src="\assets\Logo2\cargo.png" alt="label" />
-          </Grid>
-          <Grid item xs={12} md={8}>
-            <Typography variant="h3">Fullfilment</Typography>
-            <Typography variant="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fringilla est ullamcorper eget nulla facilisi etiam dignissim diam.</Typography>
-          </Grid>
-        </Grid>
-
-        
-      </Grid>
-    </Container>
+        </Container>
+      </RootStyle>
+    </>
   );
 }

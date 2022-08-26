@@ -15,39 +15,32 @@ import { MotionViewport, varFade } from '../../components/animate';
 
 const STEPS = [
   {
-    src: '/assets/illustrations/Step1.png',
+    src: '/assets/partners/alibaba.png',
     title: 'Step 1:',
     desc: 'Sign up for free!',
   },
   {
-    src: '/assets/illustrations/Step2.png',
+    src: '/assets/partners/aliexpress-small.png',
     title: 'Step 2:',
     desc: 'Search for your doctor.',
   },
   {
-    src: '/assets/illustrations/Step3.png',
+    src: '/assets/partners/mic.png',
     title: 'Step 3:',
     desc: 'Book an appointment and wait for SMS confirmation.',
   },
   {
-    src: '/assets/illustrations/Step4.png',
+    src: '/assets/partners/taobao-small.png',
     title: 'Step 4:',
     desc: 'Upload a proof of payment.',
   },
-  {
-    src: '/assets/illustrations/Step5.png',
-    title: 'Step 5:',
-    desc: 'Consult with your doctor.',
-  },
+ 
 ];
 
 const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
 const RootStyle = styled('div')(({ theme }) => ({
-  paddingTop: theme.spacing(15),
-  [theme.breakpoints.up('md')]: {
-    paddingBottom: theme.spacing(15),
-  },
+  paddingTop: theme.spacing(3),
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
@@ -113,10 +106,10 @@ LandingSlider.propTypes = {
 
 const settings = {
   display: 'flex',
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
-  slidesToShow: 5,
+  slidesToShow: 4,
   slidesToScroll: 4,
   initialSlide: 0,
   autoplay: true,
@@ -126,18 +119,18 @@ const settings = {
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 2,
+        slidesToScroll: 1,
         infinite: true,
-        dots: true,
+        dots: false,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
       },
     },
     {
@@ -202,13 +195,13 @@ export default function LandingSlider({ setRef }) {
                       // height: 130,
                     }}
                     width={150}
-                    height={500}
+                    height={200}
                   />
 
                   <Skeleton
                     animation="wave"
                     width={'50%'}
-                    height={15}
+                    height={10}
                     sx={{
                       mt: -10,
                       mx: 'auto',
@@ -218,7 +211,7 @@ export default function LandingSlider({ setRef }) {
                   <Skeleton
                     animation="wave"
                     width={'50%'}
-                    height={15}
+                    height={10}
                     sx={{
                       mt: -2,
                       mx: 'auto',
@@ -228,7 +221,7 @@ export default function LandingSlider({ setRef }) {
                   <Skeleton
                     animation="wave"
                     width={'50%'}
-                    height={15}
+                    height={10}
                     sx={{
                       mt: -2,
                       mx: 'auto',
@@ -251,7 +244,7 @@ export default function LandingSlider({ setRef }) {
               mt: -5,
             }}
           >
-            <Skeleton
+           {/*  <Skeleton
               animation="wave"
               width={'30%'}
               height={15}
@@ -260,8 +253,8 @@ export default function LandingSlider({ setRef }) {
                 mx: 'auto',
                 mb: 3,
               }}
-            />
-            <Skeleton
+            /> */}
+            {/* <Skeleton
               animation="wave"
               width={'35%'}
               height={15}
@@ -270,8 +263,8 @@ export default function LandingSlider({ setRef }) {
                 mx: 'auto',
                 mb: 3,
               }}
-            />
-            <Skeleton
+            /> */}
+          {/*   <Skeleton
               animation="wave"
               width={'70%'}
               height={25}
@@ -280,7 +273,7 @@ export default function LandingSlider({ setRef }) {
                 mx: 'auto',
                 mb: 3,
               }}
-            />
+            /> */}
           </Box>
         </Grid>
       </Grid>
@@ -310,12 +303,12 @@ export default function LandingSlider({ setRef }) {
                 color: 'rgb(95, 95, 95)',
               }}
             >
-              How to consult with your doctor in 5 easy steps
+              Our Partners
             </Typography>
           </m.div>
         </Grid>
 
-        <Grid container spacing={1} sx={{ p: 10, mt: 1 }}>
+        <Grid container spacing={1} sx={{ p: 5, mt: 1 }}>
           <Grid item xs={12} md={12}>
             <Slider {...settings}>
               {STEPS.map((s) => (
@@ -327,9 +320,10 @@ export default function LandingSlider({ setRef }) {
                       mx: 'auto',
                       width: { xs: 150, md: 150 },
                       height: 'auto',
+                      justifyContent: 'center',
                     }}
                   />
-                  <Typography
+                  {/* <Typography
                     variant="body1"
                     paragraph
                     sx={{ textAlign: 'center', fontSize: { xs: '20px', md: '24px' }, mt: 1 }}
@@ -349,14 +343,14 @@ export default function LandingSlider({ setRef }) {
                     }}
                   >
                     {s.desc}
-                  </Typography>
+                  </Typography> */}
                 </m.div>
               ))}
             </Slider>
           </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={12} md={12} sx={{ mb: { xs: 10, md: 0 } }}>
+       {/*  <Grid item xs={12} sm={12} md={12} sx={{ mb: { xs: 10, md: 0 } }}>
           <Box
             sx={{
               justifyContent: 'center',
@@ -373,7 +367,7 @@ export default function LandingSlider({ setRef }) {
               Need to Consult? Find your doctor <RedLettering>here</RedLettering>
             </Typography>
           </Box>
-        </Grid>
+        </Grid> */}
       </Grid> ) }
     </RootStyle>
   );

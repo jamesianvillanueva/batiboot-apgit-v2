@@ -19,6 +19,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   marginBottom: 20,
   [theme.breakpoints.up('md')]: {
     paddingTop: theme.spacing(5),
+    paddingBottom: theme.spacing(5),
   },
 }));
 

@@ -6,17 +6,18 @@ import Page from '../components/Page';
 import { AboutHero, AboutWhat, AboutTeam, AboutVision, AboutTestimonials } from '../sections/about';
 import { _appFeatured, _appAuthors, _appInstalled, _appRelated, _appInvoices } from '../_mock';
 import {
-  HomeHero,
+/*   HomeHero, */
   /*   HomeMinimal, */
-  HomeDarkMode,
+ /*  HomeDarkMode, */
   ContactUs,
-  HomeColorPresets,
-  HomePricingPlans,
-  HomeAdvertisement,
-  HomeCleanInterfaces,
+/*   HomeColorPresets, */
+/*   HomePricingPlans, */
+/*   HomeAdvertisement, */
+/*   HomeCleanInterfaces, */
   AboutUs,
-  LandingSecondPage,
+/*   LandingSecondPage, */
   LandingThirdPage,
+  LandingSlider,
   LandingCounts,
   SpecialServices,
   ContactNow,
@@ -55,7 +56,8 @@ export default function Home2() {
           <ContactNow/>
           <ContactUs />
           <Feedback />
-          <Partners />
+          {/* <Partners /> */}
+          <LandingSlider />
           <Maps />
         </ContentStyle>
       </RootStyle>

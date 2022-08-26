@@ -83,16 +83,16 @@ export default function Partners() {
       <Container component={MotionViewport}>
         <Grid container spacing={10} justifyContent="center">
           <Grid item xs={6} md={3} sx={{mt: 5}}>
-            <Image src="\assets\partners\partner1.png" alt="partner1" />
+            <Image src="/assets/partners/alibaba.png" alt="partner1" />
           </Grid>
           <Grid item xs={6} md={3} sx={{mt: 5}}>
-            <Image src="\assets\partners\partner2.png" alt="partner1" />
+            <Image src="/assets/partners/aliexpress-small.png" alt="partner2" />
           </Grid>
           <Grid item xs={6} md={2}>
-            <Image src="\assets\partners\partner3.png" alt="partner1" />
+            <Image src="/assets/partners/mic.png" alt="partner3" />
           </Grid>
           <Grid item xs={6} md={2}>
-            <Image src="\assets\partners\partner4.png" alt="partner1" />
+            <Image src="/assets/partners/taobao-small.png" alt="partner4" />
           </Grid>
         </Grid>
       </Container>

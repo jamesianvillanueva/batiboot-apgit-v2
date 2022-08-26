@@ -79,21 +79,20 @@ export default function LandingCounts() {
   const screenRightAnimate = variantScreenRight;
 
   return (
-    <RootStyle sx={{ backgroundColor: '#02c4f0'}}>
-      <Container component={MotionViewport}>
+    <RootStyle>
         <Grid container spacing={2}>
           <Grid item xs={6} md={3}>
             <Grid container spacing={2}>
               <Grid item xs={5}>
-                <Image src="\assets\countLogos\done.svg" variants={varFade().inRight}/>
+                <Image src="\assets\countLogos\done.svg" variants={varFade().inRight} />
               </Grid>
               <Grid item xs={7}>
-                <Typography variant='h3' sx={{mt: 2}}>
-                  320
-                </Typography>
-                <Typography>
-                  Projects Done
-                </Typography>
+                <m.div variants={varFade().inRight}>
+                  <Typography variant="h3" sx={{ mt: 2 }}>
+                    320
+                  </Typography>
+                  <Typography>Projects Done</Typography>
+                </m.div>
               </Grid>
             </Grid>
           </Grid>
@@ -101,15 +100,15 @@ export default function LandingCounts() {
           <Grid item xs={6} md={3}>
             <Grid container spacing={2}>
               <Grid item xs={5}>
-                <Image src="\assets\countLogos\worldwide.svg" variants={varFade().inRight}/>
+                <Image src="\assets\countLogos\worldwide.svg" variants={varFade().inRight} />
               </Grid>
               <Grid item xs={7}>
-              <Typography variant='h3' sx={{mt: 2}}>
-                  72
-                </Typography>
-                <Typography>
-                 Client's WorldWide
-                </Typography>
+                <m.div variants={varFade().inRight}>
+                  <Typography variant="h3" sx={{ mt: 2 }}>
+                    72
+                  </Typography>
+                  <Typography>Client's WorldWide</Typography>
+                </m.div>
               </Grid>
             </Grid>
           </Grid>
@@ -117,16 +116,16 @@ export default function LandingCounts() {
           <Grid item xs={6} md={3}>
             <Grid container spacing={2}>
               <Grid item xs={5}>
-                <Image src="\assets\countLogos\truck.svg" variants={varFade().inRight}/>
+                <Image src="\assets\countLogos\truck.svg" variants={varFade().inRight} />
               </Grid>
               <Grid item xs={7}>
-              <Typography variant='h3' sx={{mt: 2}}>
-                  153
-                </Typography>
-                
-                <Typography>
-                   Owned Vehicles
-                </Typography>
+                <m.div variants={varFade().inRight}>
+                  <Typography variant="h3" sx={{ mt: 2 }}>
+                    153
+                  </Typography>
+
+                  <Typography>Owned Vehicles</Typography>
+                </m.div>
               </Grid>
             </Grid>
           </Grid>
@@ -134,21 +133,20 @@ export default function LandingCounts() {
           <Grid item xs={6} md={3}>
             <Grid container spacing={2}>
               <Grid item xs={5}>
-                <Image src="\assets\countLogos\people.svg" variants={varFade().inRight}/>
+                <Image src="\assets\countLogos\people.svg" variants={varFade().inRight} />
               </Grid>
               <Grid item xs={7}>
-              <Typography variant='h3' sx={{mt: 2}}>
-                 112
-                </Typography>
-                
-                <Typography>
-                  People in Team
-                </Typography>
+                <m.div variants={varFade().inRight}>
+                  <Typography variant="h3" sx={{ mt: 2 }}>
+                    112
+                  </Typography>
+
+                  <Typography>People in Team</Typography>
+                </m.div>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-      </Container>
     </RootStyle>
   );
 }

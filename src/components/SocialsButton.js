@@ -17,7 +17,7 @@ SocialsButton.propTypes = {
 export default function SocialsButton({ initialColor = false, simple = true, links = {}, sx, ...other }) {
   const SOCIALS = [
     {
-      name: 'FaceBook',
+      name: 'Facebook',
       icon: 'eva:facebook-fill',
       socialColor: '#1877F2',
       path: links.facebook || '#facebook-link',
@@ -27,12 +27,6 @@ export default function SocialsButton({ initialColor = false, simple = true, lin
       icon: 'ant-design:instagram-filled',
       socialColor: '#E02D69',
       path: links.instagram || '#instagram-link',
-    },
-    {
-      name: 'Linkedin',
-      icon: 'eva:linkedin-fill',
-      socialColor: '#007EBB',
-      path: links.linkedin || '#linkedin-link',
     },
     {
       name: 'Twitter',

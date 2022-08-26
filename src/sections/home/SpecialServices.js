@@ -89,6 +89,7 @@ export default function SpecialServices() {
           <Grid item xs={12}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={3}>
+              <m.div variants={varFade().inRight}>
                 <Typography variant="h3" sx={{ mb: 5, color: 'common.white' }}>
                   SPECIAL SERVICES
                 </Typography>
@@ -96,6 +97,7 @@ export default function SpecialServices() {
                   Globally known for our ability to handle every last detail of our customers’ particular logistics and
                   forwarding needs, TransCargo’s Special Services team takes care of all your logistics.
                 </Typography>
+                </m.div>
               </Grid>
               <Grid item xs={12} md={9} sx={{mt: 5}}>
                 <SpecialServicesSlider title="Newest Booking" subheader="12 Booking" list={_bookingNew} />

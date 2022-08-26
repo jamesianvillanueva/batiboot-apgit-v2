@@ -12,7 +12,7 @@ export { default as AboutUs } from './AboutUs';
 /* export { default as LandingFirstPage } from './LandingFirstPage'; */
 export { default as LandingSecondPage } from './LandingSecondPage';
 export { default as LandingThirdPage } from './LandingThirdPage';
-/* export { default as LandingSlider } from './LandingSlider'; */
+export { default as LandingSlider } from './LandingSlider';
 /* export { default as TransitionOne } from './TransitionOne'; */
 export { default as LandingCounts } from './LandingCounts';
 export { default as SpecialServices } from './SpecialServices';

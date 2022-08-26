@@ -41,7 +41,7 @@ export default function Feedback() {
   };
 
   return (
-    <Box sx={{position: 'relative'}}>
+    <Box sx={{ position: 'relative' }}>
       <Slider ref={carouselRef} {...settings}>
         {_carouselsFeedback.map((item, index) => (
           <CarouselItem key={item.id} item={item} isActive={index === currentIndex} />
@@ -53,7 +53,6 @@ export default function Feedback() {
         onNext={handleNext}
         onPrevious={handlePrevious}
       />
-      
     </Box>
   );
 }
@@ -66,7 +65,7 @@ Feedback.propTypes = {
     description: PropTypes.string,
     image: PropTypes.string,
     title: PropTypes.string,
-    jobs: PropTypes.string
+    jobs: PropTypes.string,
   }),
 };
 
@@ -102,22 +101,28 @@ function CarouselItem({ item, isActive }) {
           color: 'common.white',
         }}
       >
-        <Grid>
-        <m.div variants={varFade().inRight}>
-          <Typography variant="h5" gutterBottom noWrap>
-          {item.description}
-          </Typography>
-        </m.div>
-        <m.div variants={varFade().inRight}>
-          <Typography variant="h5" gutterBottom>
-          {item.title}
-          </Typography>
-          </m.div>
-          <m.div variants={varFade().inRight}>
-          <Typography variant="caption" gutterBottom>
-          {item.jobs}
-          </Typography>
-        </m.div>
+        <Grid container spacing={2}>
+          <Grid item xs={8} md={12}>
+            <m.div variants={varFade().inRight}>
+              <Typography variant="h5" gutterBottom sx={{ fontSize: { xs: 8, sm: 10, md: 14, lg: 26 } }}>
+                {item.description}
+              </Typography>
+            </m.div>
+          </Grid>
+          <Grid item xs={8}>
+            <m.div variants={varFade().inRight}>
+              <Typography variant="h5" gutterBottom sx={{ fontSize: { xs: 8, sm: 10, md: 14, lg: 20 } }}>
+                {item.title}
+              </Typography>
+            </m.div>
+          </Grid>
+          <Grid item xs={12}>
+            <m.div variants={varFade().inRight}>
+              <Typography variant="caption" gutterBottom sx={{ fontSize: { xs: 8, sm: 10, md: 14, lg: 20 } }}>
+                {item.jobs}
+              </Typography>
+            </m.div>
+          </Grid>
         </Grid>
       </CardContent>
     </Box>

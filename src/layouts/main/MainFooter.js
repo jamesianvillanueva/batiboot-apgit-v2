@@ -15,7 +15,9 @@ const LINKS = [
     headline: 'Informations',
     children: [
       { name: 'About us', href: PATH_PAGE.about },
+      { name: 'Contact us', href: PATH_PAGE.contact },
       { name: 'FAQs', href: PATH_PAGE.faqs },
+
     ],
   },
   {
@@ -28,9 +30,9 @@ const LINKS = [
   {
     headline: 'Contact',
     children: [
-      { name: 'Contact us', href: PATH_PAGE.contact },
      /*  { name: 'support@minimals.cc', href: '#' }, */
       { name: 'Address road 123, Manila Philippines', href: '#' },
+      { name: '0999-900-9006', href: '#' },
     ],
   },
 ];

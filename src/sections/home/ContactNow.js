@@ -12,18 +12,17 @@ const RootStyle = styled('div')(({ theme }) => ({
   padding: theme.spacing(3, 0),
   /* backgroundColor: '#02c4f0', */
   height: '400px',
-        backgroundImage: `url(${'/assets/batibootAssets/officebg.webp'})`,
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundAttachment: 'fixed',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        width: '100%',
-        marginTop: '20px',
-        backdropFilter: "blur(200px)",
-        
+  backgroundImage: `url(${'/assets/batibootAssets/officebg.webp'})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  backgroundAttachment: 'fixed',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'column',
+  width: '100%',
+  marginTop: '20px',
+  backdropFilter: 'blur(200px)',
 }));
 
 const ContentStyle = styled('div')(({ theme }) => ({
@@ -79,7 +78,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
     }, */
 }));
 
-const BackgroundImg = styled(m.img)(({ theme }) => ({
+/* const BackgroundImg = styled(m.img)(({ theme }) => ({
   height: '500px',
   backgroundImage: `url(${'/assets/batibootAssets/officebg.webp'})`,
   backgroundRepeat: 'no-repeat',
@@ -91,7 +90,7 @@ const BackgroundImg = styled(m.img)(({ theme }) => ({
   flexDirection: 'column',
   width: '100%',
   marginTop: '20px',
-}));
+})); */
 
 const variantScreenLeft = {
   initial: COMMON,
@@ -122,22 +121,32 @@ export default function ContactNow() {
   const screenRightAnimate = variantScreenRight;
 
   return (
-    <RootStyle sx={{
-        
-      }}>
-      <Container component={MotionViewport} >
+    <RootStyle sx={{}}>
+       <Box
+        sx={{
+          top: 0,
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          backgroundImage: `linear-gradient(to top, ${theme.palette.grey[500]} 0%,${alpha(
+            theme.palette.grey[900],
+            0
+          )} 100%)`,
+        }}
+      />
+      <Container component={MotionViewport}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={12}>
             <Grid container spacing={2}>
               <Grid item md={8} xs={12} sx={{ mt: 10 }}>
-              <m.div variants={varFade().inRight}>
-                <Typography variant="h3" sx={{ mb: 5 }}>
-                  Reach your destination 100% sure and safe
-                </Typography>
-                <Typography>
-                  We designed a detailed homepage layouts that will fit any transportation industry size. We will take
-                  care of your cargo or your pasenger and deliver them safe and on time!
-                </Typography>
+                <m.div variants={varFade().inRight}>
+                  <Typography variant="h3" sx={{ mb: 5 }}>
+                    Reach your destination 100% sure and safe
+                  </Typography>
+                  <Typography>
+                    We designed a detailed homepage layouts that will fit any transportation industry size. We will take
+                    care of your cargo or your pasenger and deliver them safe and on time!
+                  </Typography>
                 </m.div>
                 <Button
                   variant="contained"
@@ -146,14 +155,13 @@ export default function ContactNow() {
                     backgroundColor: '#02c4f0',
                     borderRadius: '20px',
                     p: '10px',
-                    
                   }}
                 >
                   CONTACT NOW
                 </Button>
               </Grid>
-              <Grid item md={4} sx={{ display: { xs: 'none', md: 'block' }}} >
-                <Image src="\assets\batibootAssets\callcenter.png" sx={{ width: '500px', height: '400px' }} />
+              <Grid item md={4} sx={{ display: { xs: 'none', md: 'block' } }}>
+                <Image src="\assets\batibootAssets\callcenter.png" sx={{ width: '600px', height: '400px' }} />
               </Grid>
             </Grid>
           </Grid>

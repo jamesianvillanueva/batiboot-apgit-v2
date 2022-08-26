@@ -1,9 +1,10 @@
+import { m } from 'framer-motion';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { useRef } from 'react';
 // @mui
 import { alpha, useTheme, styled } from '@mui/material/styles';
-import { Box, Card, Typography, IconButton, Grid} from '@mui/material';
+import { Box, Card, Typography, IconButton, Grid,  LinearProgress } from '@mui/material';
 
 // utils
 import cssStyles from '../../utils/cssStyles';
@@ -14,7 +15,7 @@ import Image from '../../components/Image';
 import Iconify from '../../components/Iconify';
 import { CarouselArrows } from '../../components/carousel';
 import useResponsive from '../../hooks/useResponsive';
-
+import { MotionViewport, varFade } from '../../components/animate';
 // ----------------------------------------------------------------------
 
 const ContentItemStyle = styled('div')(({ theme }) => ({
@@ -111,23 +112,37 @@ CarouselItem.propTypes = {
   }),
 };
 
-function CarouselItem({ item }) {
+
+CarouselLandingPageOne.propTypes = {
+  buffer: PropTypes.number.isRequired,
+  progress: PropTypes.number.isRequired,
+};
+
+
+
+function CarouselItem({ item, progress, buffer}) {
   const { image, title } = item;
 
   return (
     <Box sx={{ position: 'cover', zIndex: 0 }}>
       {image}
+      <Box sx={{  visibility:{ xs:"hidden", sm:"visible"},}}>
       <ContentItemStyle>
-        <Grid container spacing={2}>
+        <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} color="inherit" />
+        <Grid container spacing={2} >
           <Grid item xs={12}>
-            <Typography variant="h3" sx={{ color: 'common.white' }}>
+          <m.div variants={varFade().inRight}>
+            <Typography variant="h3" sx={{ color: 'common.white', fontSize: { xs: 10, md: 26, lg: 32 } }}>
               {item.title}
             </Typography>
+            </m.div>
           </Grid>
-          <Grid item xs={8}>
-            <Typography variant="subtitle2" sx={{ color: 'common.white' }}>
+          <Grid item xs={12} md={8}>
+          <m.div variants={varFade().inRight}>
+            <Typography variant="subtitle2"  sx={{ color: 'common.white', fontSize: { xs: 5, sm:8, md: 12, lg: 15 } }}>
               {item.landingDesc}
             </Typography>
+            </m.div>
           </Grid>
         </Grid>
 
@@ -144,6 +159,7 @@ function CarouselItem({ item }) {
           <Iconify icon={'eva:more-horizontal-fill'} />
         </IconButton> */}
       </ContentItemStyle>
+      </Box>
     </Box>
   );
 }

@@ -67,7 +67,7 @@ export default function InvoiceDetails({ invoice }) {
       <Card sx={{ pt: 5, px: 5 }}>
         <Grid container>
           <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
-            <Image disabledEffect visibleByDefault alt="logo" src="/logo/logo_full.svg" sx={{ maxWidth: 120 }} />
+            <Image disabledEffect visibleByDefault alt="logo" src="/logo/batiboot-logo.png" sx={{ maxWidth: 120 }} />
           </Grid>
 
           <Grid item xs={12} sm={6} sx={{ mb: 5 }}>
