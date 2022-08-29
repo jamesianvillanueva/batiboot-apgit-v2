@@ -59,6 +59,10 @@ const handlers = {
     isAuthenticated: false,
     user: null,
   }),
+  ACCOUNTCHANGEPASSWORD: (state) => ({
+    ...state,
+    isAuthenticated: true,
+  }),
   CHECKEMAILCODE: (state, action) => {
     const { user } = action.payload;
 
@@ -68,8 +72,14 @@ const handlers = {
       user,
     };
   },
-
-
+  VALIDATEUSERPASSWORD:  (state) => ({
+    ...state,
+    isAuthenticated: true,
+  }),
+  UPDATEPROFILE: (state) => ({
+    ...state,
+    isAuthenticated: true,
+  })
 
 
 };
@@ -86,6 +96,9 @@ const AuthContext = createContext({
   forgot: () => Promise.resolve(),
   changePassword: () => Promise.resolve(),
   checkEmailCode: () => Promise.resolve(),
+  validateUserPassword: () => Promise.resolve(),
+  accountChangePassword: () => Promise.resolve(),
+  updateProfile: () => Promise.resolve()
 });
 
 // ----------------------------------------------------------------------
@@ -107,9 +120,12 @@ function AuthProvider({ children }) {
 
           const response = await axios.get('/api/account/my-profile', {
             headers: {
-              'x-api-key' : process.env.REACT_APP_SECRET_API_KEY
+              'x-api-key' : process.env.REACT_APP_SECRET_API_KEY,
+                        
             }
           });
+          /* ACCESS TOKEN AS HEADERS */
+          /* 'x-access-token' : accessToken,   */  
           const { user } = response.data;
           
           dispatch({
@@ -186,6 +202,24 @@ function AuthProvider({ children }) {
       },
     });
   };
+
+  const validateUserPassword = async (email, password) => {
+    const response = await axios.post('/api/account/validate-user', {
+        email,
+        password,
+      }, {
+        headers: {
+          'x-api-key' : process.env.REACT_APP_SECRET_API_KEY,
+        }    
+      }
+    );
+
+    dispatch({
+      type: 'VALIDATEUSERPASSWORD', 
+    });
+
+
+  }
     /* const response = await axios.post('/api/account/login', {
       email,
       password,
@@ -217,7 +251,22 @@ function AuthProvider({ children }) {
       type: 'CHANGEPASSWORD', 
     });
   };
+  const accountChangePassword = async (email, password) => {
+    const response = await axios.put('/api/account/change-password', {
+      email,
+      password,
+    },
+    {
+      headers: {
+        'x-api-key' : process.env.REACT_APP_SECRET_API_KEY
+      }
+    });
 
+    dispatch({
+      type: 'ACCOUNTCHANGEPASSWORD', 
+    });
+  };
+  
   const checkEmailCode = async (code) => {
 
     const response = await axios.post('/api/account/get-verification-code', {
@@ -233,6 +282,29 @@ function AuthProvider({ children }) {
       },
     });
   };
+
+  const updateProfile = async(email, phone, photoURL, address) => {
+
+    const response = await axios.put('/api/account/update-profile', {
+        email,
+        phone,
+        photoURL,
+        address,
+    },
+    {
+      headers: {
+        'x-api-key' : process.env.REACT_APP_SECRET_API_KEY
+      }
+    });
+
+    const user = response.data;
+    dispatch({
+      type: 'UPDATEPROFILE',
+      payload: {
+        user,
+      },
+    });
+  }
 
   const register = async (email, password, firstName, lastName) => {
     const response = await axios.post('/api/account/register-api', {
@@ -274,6 +346,9 @@ function AuthProvider({ children }) {
         forgot,
         changePassword,
         checkEmailCode,
+        validateUserPassword,
+        accountChangePassword,
+        updateProfile
       }}
     >
       {children}

@@ -170,6 +170,8 @@ export default function Router() {
           path: 'user',
           children: [
             { element: <Navigate to="/batiboot/user/designation" replace />, index: true },
+            { path: 'profile', element: <UserProfile /> },
+            { path: 'account', element: <UserAccount /> },
             { path: 'designation', element: <DesignationList /> },
             { path: 'department', element: <DepartmentList /> },
             { path: 'list', element: <UserList /> },
@@ -250,6 +252,12 @@ export default function Router() {
 }
 // BATIBOOT 
 
+// USER 
+
+const UserAccount = Loadable(lazy(() => import('../pages/batiboot/UserAccount')));
+const UserProfile = Loadable(lazy(() => import('../pages/batiboot/UserProfile')));
+
+// DASHBOARD
 const GeneralDashApp = Loadable(lazy(() => import('../pages/batiboot/GeneralDashboard')))
 const InvoiceList = Loadable(lazy(() => import('../pages/batiboot/GeneralInvoice')))
 
@@ -319,10 +327,9 @@ const BlogPost = Loadable(lazy(() => import('../pages/dashboard/BlogPost')));
 const BlogNewPost = Loadable(lazy(() => import('../pages/dashboard/BlogNewPost')));
 
 // USER
-const UserProfile = Loadable(lazy(() => import('../pages/dashboard/UserProfile')));
+// const UserProfile = Loadable(lazy(() => import('../pages/dashboard/UserProfile')));
 const UserCards = Loadable(lazy(() => import('../pages/dashboard/UserCards')));
 /* const UserList = Loadable(lazy(() => import('../pages/dashboard/UserList'))); */
-const UserAccount = Loadable(lazy(() => import('../pages/dashboard/UserAccount')));
 const UserCreate = Loadable(lazy(() => import('../pages/dashboard/UserCreate')));
 
 // APP
