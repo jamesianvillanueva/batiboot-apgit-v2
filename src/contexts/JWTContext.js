@@ -268,13 +268,16 @@ function AuthProvider({ children }) {
   };
   
   const checkEmailCode = async (code) => {
-
+    
     const response = await axios.post('/api/account/get-verification-code', {
       code
+    },{
+      headers: {
+        'x-api-key' : process.env.REACT_APP_SECRET_API_KEY
+      }
     });
 
     const user = response.data;
-
     dispatch({
       type: 'CHECKEMAILCODE',
       payload: {
@@ -283,9 +286,10 @@ function AuthProvider({ children }) {
     });
   };
 
-  const updateProfile = async(email, phone, photoURL, address) => {
-
+  const updateProfile = async(name, email, phone, photoURL, address) => {
+      
     const response = await axios.put('/api/account/update-profile', {
+        name,
         email,
         phone,
         photoURL,

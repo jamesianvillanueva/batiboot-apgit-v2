@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { useSnackbar } from 'notistack';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 // form
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -19,19 +19,21 @@ import { FormProvider, RHFSwitch, RHFSelect, RHFTextField, RHFUploadAvatar } fro
 // ----------------------------------------------------------------------
 
 export default function AccountGeneral() {
+  const [fileParts, setfileParts] = useState(null)
+
   const { enqueueSnackbar } = useSnackbar();
 
-  const { user } = useAuth();
+  const { user , updateProfile } = useAuth();
 
   const UpdateUserSchema = Yup.object().shape({
     displayName: Yup.string().required('Name is required'),
   });
 
   const defaultValues = {
-    displayName: user?.displayName || '',
+    displayName: user?.name || '',
     email: user?.email || '',
     photoURL: user?.photoURL || '',
-    phoneNumber: user?.phoneNumber || '',
+    phoneNumber: user?.phone || '',
     country: user?.country || '',
     address: user?.address || '',
     state: user?.state || '',
@@ -52,26 +54,55 @@ export default function AccountGeneral() {
     formState: { isSubmitting },
   } = methods;
 
-  const onSubmit = async () => {
+  const onSubmit = async (data) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
+     // alert(fileParts)
+      const photo = !fileParts ? user.photoURL : fileParts;
+      await updateProfile(data.displayName, data.email, data.phoneNumber, photo, data.address)
+    
+      
+
+
+
       enqueueSnackbar('Update success!');
     } catch (error) {
       console.error(error);
     }
   };
-
+  
+  
   const handleDrop = useCallback(
+    
     (acceptedFiles) => {
       const file = acceptedFiles[0];
-
-      if (file) {
-        setValue(
-          'photoURL',
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          })
-        );
+      if ((file.type).toString() === 'image/png' ||
+          (file.type).toString() === 'image/jpg' ||
+          (file.type).toString() === 'image/jpeg' ||
+          (file.type).toString() === 'image/gif'
+      ){
+        
+          setValue(
+            'photoURL',
+            Object.assign(file, {
+              preview: URL.createObjectURL(file),
+            })
+          );
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onloadend = (e) => {
+          setfileParts(reader.result)
+          setValue(
+            'photoURL',
+            Object.assign(e, {
+              preview: URL.createObjectURL(e.target.files),
+            })
+          );
+            /* fileParts.push({
+              data64: [reader.result],
+            }) */
+         
+        } 
       }
     },
     [setValue]

@@ -58,7 +58,8 @@ export default function AccountGeneral() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
      // alert(fileParts)
-      await updateProfile(data.email, data.phoneNumber, fileParts, data.address)
+      const photo = !fileParts ? user.photoURL : fileParts;
+      await updateProfile(data.displayName, data.email, data.phoneNumber, photo, data.address)
     
       
 
