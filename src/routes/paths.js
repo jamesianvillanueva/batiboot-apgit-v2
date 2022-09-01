@@ -121,6 +121,7 @@ export const PATH_BATIBOOT = {
   },
   user: {
     root: path(ROOTS_BATIBOOT, '/user'),
+    account: path(ROOTS_BATIBOOT, '/user/account'),
     list: path(ROOTS_BATIBOOT, '/user/list'),
     designation: path(ROOTS_BATIBOOT, '/user/designation'),
     department: path(ROOTS_BATIBOOT, '/user/department'),
@@ -128,6 +129,7 @@ export const PATH_BATIBOOT = {
     createRole: path(ROOTS_BATIBOOT, '/user/roles/create'),
     createDesignation: path(ROOTS_BATIBOOT, '/user/designation/create'),
     createDepartment: path(ROOTS_BATIBOOT, '/user/department/create'),
+    profile: path(ROOTS_BATIBOOT, '/user/profile'),
   },
   order: {
     root: path(ROOTS_BATIBOOT, '/order'),
@@ -151,6 +153,7 @@ export const PATH_BATIBOOT = {
     all: path(ROOTS_BATIBOOT, '/mail/all'),
   },
   rules: path(ROOTS_BATIBOOT, '/rules'),
+  
 }
 
 

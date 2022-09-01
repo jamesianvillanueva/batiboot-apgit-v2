@@ -23,11 +23,11 @@ const MENU_OPTIONS = [
   },
   {
     label: 'Profile',
-    linkTo: PATH_DASHBOARD.user.profile,
+    linkTo: PATH_BATIBOOT.user.profile,
   },
   {
     label: 'Settings',
-    linkTo: PATH_DASHBOARD.user.account,
+    linkTo: PATH_BATIBOOT.user.account,
   },
 ];
 
